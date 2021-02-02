@@ -1,3 +1,24 @@
+<?php
+if(isset($_POST['submit'])){
+    $to = "satt.works@gmail.com"; // this is your Email address
+    $from = $_POST['email']; // this is the sender's Email address
+    $name = $_POST['name'];
+    $subject = "Contact @ styn.me";
+    $subject2 = "Copy of Contact @ styn.me";
+    $message = $name . " " . " wrote the following:" . "\n\n" . $_POST['message'];
+    $message2 = "Here is a copy of your message " . $name . "\n\n" . $_POST['message'];
+
+    $headers = "From:" . $from;
+    $headers2 = "From:" . $to;
+    mail($to,$subject,$message,$headers);
+    mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
+    echo "Mail Sent. Thank you " . $name . ", we will contact you shortly.";
+    header('Location: index.php');
+    // You can also use header('Location: thank_you.php'); to redirect to another page.
+    }
+?>
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -25,6 +46,7 @@
 
     <!-- MAIN STYLE -->
     <link rel="stylesheet" href="css/tooplate-style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
     
   </head>
   <body>
@@ -89,10 +111,10 @@
                         <p>People don't care about what you say, they care about what you build. <br> - Mark Zuckerberg</p>
                         
                         <div class="custom-btn-group mt-4">
-                          <a href="https://doc-0c-7k-docs.googleusercontent.com/docs/securesc/guomgkf3a8ahhbhq7rgvpotlvgtnkun7/ie2asnjb15afd14re6fho97o61jbdn9u/1612250400000/10759140970563371249/10759140970563371249/1lBtwWPQiCk4phIk99PPqnYnHKHApPFki?e=download&authuser=1&nonce=3o00pcgoqjp7e&user=10759140970563371249&hash=2nlbiuct80uqvm48b05jjm9hfeb0dr3q"
-                             class="btn mr-lg-2 custom-btn"><i class='uil uil-file-alt'></i> Download Resume</a>
-                          <a href="https://www.youtube.com/watch?v=BB0blLcn9I4" class="btn mr-lg-2 custom-btn"><i class='uil uil-video'></i> Watch Showreel</a>
-                          <a href="#contact" class="btn custom-btn custom-btn-bg custom-btn-link">Contact Me</a>
+                          <a href="https://drive.google.com/u/0/uc?id=1lBtwWPQiCk4phIk99PPqnYnHKHApPFki&export=download" class="btn mr-lg-2 custom-btn"><i class='uil uil-file-alt'></i> Download Resume</a>
+                          <a href="https://www.youtube.com/watch?v=BB0blLcn9I4" class="btn custom-btn custom-btn-bg custom-btn-link"><i class="fab fa-youtube"></i></a>
+                          <a href="#contact" class="btn custom-btn custom-btn-bg custom-btn-link"><i class="fas fa-envelope-open-text"></i></a>
+                          <a href="https://wa.me/60143072966" class="btn custom-btn custom-btn-bg custom-btn-link"><i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
@@ -217,7 +239,16 @@
                              </div>
                              <div class="timeline-info">
                                   <h3><span>Unity Developer</span><small>Crave Asia</small></h3>
-                                  <p>Develop interactive applications, backend systems and websites. </p>
+                                 <p>&#8226; Developed a few interactive applications using Unity for clients. (C# and PHP)</p>
+                                 <p>&#8226; Involve directly to help clients for software & hardware installation and technical
+                                     difficulties. (Tech Support)</p>
+                                 <p>&#8226; Design promo banners and website mockup pages for client e-commerce site.
+                                     (Photoshop)</p>
+                                 <p>&#8226; Design and develop static websites for projects. (HTML, CSS and JS)</p>
+                                 <p>&#8226; Developed and integrated ticketing system with turnstile machine for Selfie Ria.
+                                     (Unity C#, PHP, MySQL, MSSQL, HTML, CSS and JS)</p>
+                                 <p>&#8226; Organize and direct the development & installation of Wonderpark Melaka.
+                                     (Project Lead)</p>
                              </div>
                         </div>
 
@@ -227,7 +258,9 @@
                             </div>
                             <div class="timeline-info">
                                 <h3><span>Developer Intern</span><small>Crave Asia</small></h3>
-                                <p>Code interactive applications. Provide technical support for clients.</p>
+                                <p>&#8226; Develop and maintain interactive applications for clients. (C#)</p>
+                                <p>&#8226; Edit videos for client proposals. (Adobe Premier Pro)</p>
+                                <p>&#8226; Install software and hardware on-site for clients.</p>
                             </div>
                         </div>
                         
@@ -237,7 +270,9 @@
                             </div>
                             <div class="timeline-info">
                                 <h3><span>Asst. Production Manager<small>Heerpicture</small></h3>
-                                <p>Record and edit educational courseware videos. Make interactive animations.</p>
+                                <p>&#8226; Involve directly in recording of wedding and courseware videos. (Videography)</p>
+                                <p>&#8226; Editing for courseware videos. (Adobe Premier Pro)</p>
+                                <p>&#8226; Educational animations for courseware. (Adobe Flash/Animate)</p>
                             </div>
                         </div>
 
@@ -255,6 +290,14 @@
                              <div class="timeline-info">
                                   <h3><span>Bachelor's Degree in Game Technology</span></h3>
                                   <p>Universiti Teknikal Malaysia Melaka</p>
+                                 <p>&#8226; Programming languages (C#, C++, JS)</p>
+                                 <p>&#8226; Mathematical/Physics application in game</p>
+                                 <p>&#8226; 3D Modelling. (Cinema 4D)</p>
+                                 <p>&#8226; Computer & Game architecture</p>
+                                 <p>&#8226; Audio and Video editing (Adobe Premier Pro & Audacity)</p>
+                                 <p>&#8226; Game Engine development (C++)</p>
+                                 <p>&#8226; Game Project Management</p>
+
                              </div>
                         </div>
 
@@ -265,6 +308,10 @@
                             <div class="timeline-info">
                                 <h3><span>Diploma in Game Technology</span></h3>
                                 <p>Politeknik Tuanku Syed Sirajuddin, Perlis</p>
+                                <p>&#8226; Knowledge about video game industry</p>
+                                <p>&#8226; Designing (Adobe Photoshop)</p>
+                                <p>&#8226; Flash Animations (Adobe Flash/Animate)</p>
+                                <p>&#8226; 3D modelling (Autodesk 3Ds Max)</p>
                             </div>
                         </div>
 
