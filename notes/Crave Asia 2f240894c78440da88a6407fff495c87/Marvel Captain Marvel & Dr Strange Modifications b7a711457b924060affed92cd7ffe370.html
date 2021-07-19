@@ -1,0 +1,636 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Marvel Captain Marvel &amp; Dr Strange Modifications</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b7a71145-7b92-4060-affe-d92cd7ffe370" class="page sans"><header><h1 class="page-title">Marvel Captain Marvel &amp; Dr Strange Modifications</h1><table class="properties"><tbody><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M13.125,10.0354 C12.5536,9.48588 10.801,8.53125 9.625,7.875 L9.625,7.04112 C9.849,6.71912 10.045,6.37 10.1911,5.98588 C10.5849,5.7435 10.9375,5.28412 10.9375,4.8125 C10.9375,4.35488 10.9323,3.94275 10.4668,3.605 C10.3049,1.5575 9.436,0 7,0 C4.564,0 3.69513,1.5575 3.53325,3.605 C3.06775,3.94275 3.0625,4.35488 3.0625,4.8125 C3.0625,5.28412 3.41513,5.7435 3.80888,5.98588 C3.955,6.37 4.151,6.71912 4.375,7.04112 L4.375,7.875 C3.199,8.53125 1.44638,9.48588 0.875,10.0354 C0.1645,10.7188 0,11.8125 0,14 L14,14 C14,11.8125 13.8364,10.7188 13.125,10.0354 Z"></path></svg></span>Last Edited By</th><td><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">S</span></span>Sattiyan Selvarajah</span></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Type</th><td><span class="selected-value select-value-color-brown">Technical Guidelines</span></td></tr></tbody></table></header><div class="page-body"><p id="7bc18e41-5329-459c-afc0-984a2210a70f" class=""><strong>Captain Marvel PC</strong></p><figure id="740c2671-a3b2-42c6-8bb8-3e42b7fe46d4" class="image"><a href="https://lh5.googleusercontent.com/h_elfnGG13XDuikPS7wQ1Kq1Hnppi9xLDLYykiGiuOKkN0fSGI4A9nEjp3tP7hp3SSyxC5ueGh4rugkA9Uq_lPSndMFbkfrYB8cynpBN32wi2doSHMORNP-4kBKgST2wBtyNMmDa"><img src="https://lh5.googleusercontent.com/h_elfnGG13XDuikPS7wQ1Kq1Hnppi9xLDLYykiGiuOKkN0fSGI4A9nEjp3tP7hp3SSyxC5ueGh4rugkA9Uq_lPSndMFbkfrYB8cynpBN32wi2doSHMORNP-4kBKgST2wBtyNMmDa"/></a></figure><p id="6e6b826c-f315-4a2c-80c0-faee7c0ce9ff" class=""><strong>Path : CaptainMarvelPC\</strong></p><figure id="f0868eb0-5c68-4db0-aad2-f561975eba0d" class="image"><a href="https://lh6.googleusercontent.com/ej8AboVI-5td0YnW0_dmmR6r3QBp2l4LRuMbaj70wBN1ZTFt_HoNCajglfml3J6VNEj9ugRogaRIMa9HpQL5hQd5rHgTyHb0wanlUq0PvM_IW4okrv2HoJA-_ffd-Qy_VEnPJHua"><img src="https://lh6.googleusercontent.com/ej8AboVI-5td0YnW0_dmmR6r3QBp2l4LRuMbaj70wBN1ZTFt_HoNCajglfml3J6VNEj9ugRogaRIMa9HpQL5hQd5rHgTyHb0wanlUq0PvM_IW4okrv2HoJA-_ffd-Qy_VEnPJHua"/></a></figure><p id="e05e27f1-d3a8-4b58-ad02-9f9e95e131e0" class=""><strong>Path : CaptainMarvelPC\CaptainMarvelMain_Data\</strong></p><figure id="eeadbbfa-b01e-46bf-8fcb-26c351434998" class="image"><a href="https://lh3.googleusercontent.com/X7vu-ClGkcGHG8Ud88BMN2494Q8824SxmPVFAchCbb7poexAXjcMDrWnFo1JLmvLP-JR6cnnLHWU72Y64fYVduXBabTc7YvU0LWYBKB79k479G7c6ovzQ4DTXB8DyluYkb2hl1Qn"><img src="https://lh3.googleusercontent.com/X7vu-ClGkcGHG8Ud88BMN2494Q8824SxmPVFAchCbb7poexAXjcMDrWnFo1JLmvLP-JR6cnnLHWU72Y64fYVduXBabTc7YvU0LWYBKB79k479G7c6ovzQ4DTXB8DyluYkb2hl1Qn"/></a></figure><p id="4665ec52-a08c-44b0-b8fc-8353a53f2cd8" class=""><strong>Path : CaptainMarvelPC\CaptainMarvelMain_Data\StreamingAssets\</strong></p><figure id="6127a317-3992-4c02-9882-be7713aa33cb" class="image"><a href="https://lh5.googleusercontent.com/yMVOnZn8H4s-Mb1VCElGx55HSR9OhmJ_P2y2n0X0td3EmzuzP_XXhiOjjkf3EKjrXt6kOOBUlmZKI8eDFhv4PQP4PdhUmSKEez0ccDUMnofwOXTywrqW6__vP3BRrQ5LVdkXPFN_"><img src="https://lh5.googleusercontent.com/yMVOnZn8H4s-Mb1VCElGx55HSR9OhmJ_P2y2n0X0td3EmzuzP_XXhiOjjkf3EKjrXt6kOOBUlmZKI8eDFhv4PQP4PdhUmSKEez0ccDUMnofwOXTywrqW6__vP3BRrQ5LVdkXPFN_"/></a></figure><p id="cc657306-7bf1-4d7b-8ba1-a028287b8057" class=""><strong>Path : CaptainMarvelPC\CaptainMarvelMain_Data\StreamingAssets\Assets</strong></p><figure id="ee9e4863-6945-460a-b6f3-56b858398bb4" class="image"><a href="https://lh3.googleusercontent.com/sSEkZo2rKwbJttSBkATL0MjxVAYRIPOswtUpf44AaJhYFx_pNxhcGZQULKn04LCEEFcTvvAtPaqHHj8A1Lt0Jecua9X5ONV5QnhOv4ZcuQ0tdTbj_GrON5n0CvpGPIycZspE1nhv"><img src="https://lh3.googleusercontent.com/sSEkZo2rKwbJttSBkATL0MjxVAYRIPOswtUpf44AaJhYFx_pNxhcGZQULKn04LCEEFcTvvAtPaqHHj8A1Lt0Jecua9X5ONV5QnhOv4ZcuQ0tdTbj_GrON5n0CvpGPIycZspE1nhv"/></a></figure><p id="3acfb31d-4765-4a5b-9bb6-f0a029f80caf" class="">You can replace the Logo and Background in the folder. Please make sure the file name and extension is exactly the same as the current one.</p><p id="e028f5f1-86be-4f0d-85ad-462df92b6b28" class="">For example : Background video file must be in MP4 and named as “Background.mp4”</p><p id="cf25e53b-529c-440e-a5c9-1041605f8b27" class="">Please follow this resolution :</p><p id="87854999-0651-443e-a432-24941b5bf098" class="">Background video : 1080x1920</p><p id="aab942a8-84ec-419f-b417-8ab3bc9813e3" class="">Logo : 1634x311</p><p id="697505b8-1614-4526-8d64-fb26106c83b2" class=""><strong>Captain Marvel Android (Samsung Galaxy S10)</strong></p><figure id="4499bb6b-03d7-458d-a571-4bf22f9b81b4" class="image"><a href="https://lh6.googleusercontent.com/7hrqeHbs1omR29JKm88YmWHiGoUO9I5-23ykRO8kTEohD77SLHeWNurXDXEEPkZjUI5pw8XgglDWcwjIfiljT4l3bd8l4ojot146j8-xNImgpzIH4jJtEiU3AlNHS5V89Guwvtxh"><img src="https://lh6.googleusercontent.com/7hrqeHbs1omR29JKm88YmWHiGoUO9I5-23ykRO8kTEohD77SLHeWNurXDXEEPkZjUI5pw8XgglDWcwjIfiljT4l3bd8l4ojot146j8-xNImgpzIH4jJtEiU3AlNHS5V89Guwvtxh"/></a></figure><figure id="9a33553b-ca43-4e94-b135-22c71fb925e9" class="image"><a href="https://lh4.googleusercontent.com/sm5SWonHUotwKZ5C5lSPVLUMEQFUweNxAVcCAPmouMQTwI4H_zbKGJzABkMJB7JEQLdupkFYXtKDzJ0z2pn9G_L9PNhO9JkHGbmhsjuEr4kacDbdU1UUiCWfzA6PbJ_UR2FIiLHY"><img src="https://lh4.googleusercontent.com/sm5SWonHUotwKZ5C5lSPVLUMEQFUweNxAVcCAPmouMQTwI4H_zbKGJzABkMJB7JEQLdupkFYXtKDzJ0z2pn9G_L9PNhO9JkHGbmhsjuEr4kacDbdU1UUiCWfzA6PbJ_UR2FIiLHY"/></a></figure><figure id="5be4d90c-4a19-4412-8b99-372fe4abe093" class="image"><a href="https://lh5.googleusercontent.com/JOLfw33Z88iCnyxBfSa3Rlu2bIj1YmW6Xa5o5JjWnG5GkdsGGaWLvyxJlkx5iR3BNSfQaDLQo7y5ehjKD4Dm2JC7lxPPsFgArF1zq_oXhwoOETYVt_hIdk611z4RsSZ7YhYl3BZj"><img src="https://lh5.googleusercontent.com/JOLfw33Z88iCnyxBfSa3Rlu2bIj1YmW6Xa5o5JjWnG5GkdsGGaWLvyxJlkx5iR3BNSfQaDLQo7y5ehjKD4Dm2JC7lxPPsFgArF1zq_oXhwoOETYVt_hIdk611z4RsSZ7YhYl3BZj"/></a></figure><p id="21c0f4a2-183d-407b-9b77-e5e536538590" class=""><strong>Dr Strange PC</strong></p><figure id="adb5e565-d0c7-4591-bdfb-4bc9806062a8" class="image"><a href="https://lh6.googleusercontent.com/mNBYM2VBQnPfm0w77qqtfK5Xu2tj-3LEsOa20hqV_qQBuI1622PLWcPgAS4MEFD9Bdyus3bgHb0bX3eaIKv_ZNyn8vZlLhCDXKG68M6CfAddgetpq51LZjAZNBSTszQ8Hr2LwrFd"><img src="https://lh6.googleusercontent.com/mNBYM2VBQnPfm0w77qqtfK5Xu2tj-3LEsOa20hqV_qQBuI1622PLWcPgAS4MEFD9Bdyus3bgHb0bX3eaIKv_ZNyn8vZlLhCDXKG68M6CfAddgetpq51LZjAZNBSTszQ8Hr2LwrFd"/></a></figure><p id="f2095eb6-4061-41dc-b24c-86eb8906715c" class=""><strong>Path : DrStrangeApple\</strong></p><figure id="0861c3d1-ef5f-41c8-b170-0312be25adb6" class="image"><a href="https://lh5.googleusercontent.com/te5v_eigoo2umdootHMg7USqDlSkdXpA9Cdi-fWSmWcNLmCRWMKdOFLt7OYjSc8QocgFqRuFqfZcxnzbeG1qf_X4qTtSJuWthidYaa3dFNjETiecXaKwliOYVQVKKTB8Df3G5Ltn"><img src="https://lh5.googleusercontent.com/te5v_eigoo2umdootHMg7USqDlSkdXpA9Cdi-fWSmWcNLmCRWMKdOFLt7OYjSc8QocgFqRuFqfZcxnzbeG1qf_X4qTtSJuWthidYaa3dFNjETiecXaKwliOYVQVKKTB8Df3G5Ltn"/></a></figure><p id="a0311093-a588-4d8c-b171-b6e18a4ecd1d" class=""><strong>Path : DrStrangeApple\DrStrangeApple_Data\</strong></p><figure id="f8ad1b96-52c8-4f6f-adad-e9e6e55e1e31" class="image"><a href="https://lh4.googleusercontent.com/0505Cf_wj5yYS3FBPH7apg7B4mzbm3VEfVmnOtnJppnG-KcLyjdF89fKhn84L3jn7Hcj4DKQpGTQhcRnsmrHTWJ8UUpJJD31chAOVOPXDN_lsSP13K0ORWviexGWaD09WRqhlCdy"><img src="https://lh4.googleusercontent.com/0505Cf_wj5yYS3FBPH7apg7B4mzbm3VEfVmnOtnJppnG-KcLyjdF89fKhn84L3jn7Hcj4DKQpGTQhcRnsmrHTWJ8UUpJJD31chAOVOPXDN_lsSP13K0ORWviexGWaD09WRqhlCdy"/></a></figure><p id="b74ab385-beb4-47e5-86d9-3e98cb5ede84" class=""><strong>Path : DrStrangeApple\DrStrangeApple_Data\StreamingAssets\</strong></p><figure id="fda55709-8579-4d5f-aa1f-18ed69fa9183" class="image"><a href="https://lh6.googleusercontent.com/5kn5OkomTsa1zSrsvelk14Sl7jYqQEBaBnv1QQF4-2vrWY4jeC0p9iPd2IUeTaZxnyx4grkDFfMl6PGlimbGhs6d3hot15VHurAU0Y_RSEaBjq-bzABHlL6YLH2Gn5dKxU-LKYQg"><img src="https://lh6.googleusercontent.com/5kn5OkomTsa1zSrsvelk14Sl7jYqQEBaBnv1QQF4-2vrWY4jeC0p9iPd2IUeTaZxnyx4grkDFfMl6PGlimbGhs6d3hot15VHurAU0Y_RSEaBjq-bzABHlL6YLH2Gn5dKxU-LKYQg"/></a></figure><p id="a74549d4-ea9e-4147-a10b-2836dca7993a" class=""><strong>Path : DrStrangeApple\DrStrangeApple_Data\StreamingAssets\Assets</strong></p><figure id="55901630-fb08-4246-a9e5-4dc745fa5484" class="image"><a href="https://lh5.googleusercontent.com/FOluERh-omHI-DS_P8HSIc0Es0eQ_QHpUP7F5c5H7w-KgFrsE-B53e2eSv6GlZH9ODiHvYd83p1_pyNkILj_nP2e9ea9vRVYG0A_typeJ6qZEpU3bjo8WxpSY3GpGmY2zFqRx8AD"><img src="https://lh5.googleusercontent.com/FOluERh-omHI-DS_P8HSIc0Es0eQ_QHpUP7F5c5H7w-KgFrsE-B53e2eSv6GlZH9ODiHvYd83p1_pyNkILj_nP2e9ea9vRVYG0A_typeJ6qZEpU3bjo8WxpSY3GpGmY2zFqRx8AD"/></a></figure><p id="809ae03c-cf08-4604-91d6-ba909e6b0c2d" class="">You can replace the Logo in the folder. Please make sure the file name and extension is exactly the same as the current one.</p><p id="7d5a00bc-b3e6-4e28-b17c-e453206a5e7a" class="">For example : Logo image file must be in PNG and named as “Logo.png”</p><p id="b35133fb-e40c-4316-894f-6b8c700a8a0e" class="">Please follow this resolution :</p><p id="e26cf9bf-ee92-40fc-8f29-4f53dc2fbf45" class="">Logo : 1634x311</p></div></article></body></html>
