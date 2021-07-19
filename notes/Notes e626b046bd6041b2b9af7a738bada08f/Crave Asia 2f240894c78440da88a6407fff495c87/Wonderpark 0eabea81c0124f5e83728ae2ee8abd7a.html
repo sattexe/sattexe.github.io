@@ -1,0 +1,645 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Wonderpark</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="0eabea81-c012-4f5e-8372-8ae2ee8abd7a" class="page sans"><header><h1 class="page-title">Wonderpark</h1><table class="properties"><tbody><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M6.98643729,14.0000972 C5.19579566,14.0000972 3.40419152,13.3106896 2.04245843,11.9323606 C-0.681017475,9.21200555 -0.680780251,4.76029539 2.04293482,2.04012507 C4.76664406,-0.68004331 9.22427509,-0.68004331 11.9480135,2.04013479 C13.272481,3.36277455 14,5.1330091 14,6.99552762 C14,8.87640182 13.2721894,10.6285043 11.9480135,11.9509302 C10.5679344,13.3105924 8.77756503,14.0000972 6.98643729,14.0000972 Z M10.2705296,7.00913883 L10.2705296,8.46099754 L10.2705296,8.65543362 L10.076181,8.65543362 L8.6543739,8.65543362 L5.72059514,8.65543362 L5.52619796,8.65543362 L5.52619796,8.46099754 L5.52619796,5.52541044 L5.52619796,3.37946773 L5.52619796,3.18502193 L5.72059514,3.18502193 L7.17253164,3.18502193 L7.36692883,3.18502193 L7.36692883,3.37946773 L7.36692883,6.81467358 L10.076181,6.81467358 L10.2705296,6.81467358 L10.2705296,7.00913883 Z M12.1601539,6.99552762 C12.1601539,5.61697497 11.6190112,4.32597154 10.6393933,3.34769528 C8.63253764,1.34336744 5.35197452,1.34061603 3.34153136,3.33944106 C3.33868273,3.34219247 3.33607716,3.34494388 3.33322852,3.34769528 C1.32397148,5.35459953 1.32372842,8.63641682 3.33322852,10.6433794 C5.34295224,12.6504489 8.62968901,12.6504489 10.6393933,10.6433794 C11.6190112,9.66506426 12.1601539,8.37408027 12.1601539,6.99552762 Z"></path></svg></span>Created</th><td><time>@July 19, 2021 11:44 AM</time></td></tr><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M13.125,10.0354 C12.5536,9.48588 10.801,8.53125 9.625,7.875 L9.625,7.04112 C9.849,6.71912 10.045,6.37 10.1911,5.98588 C10.5849,5.7435 10.9375,5.28412 10.9375,4.8125 C10.9375,4.35488 10.9323,3.94275 10.4668,3.605 C10.3049,1.5575 9.436,0 7,0 C4.564,0 3.69513,1.5575 3.53325,3.605 C3.06775,3.94275 3.0625,4.35488 3.0625,4.8125 C3.0625,5.28412 3.41513,5.7435 3.80888,5.98588 C3.955,6.37 4.151,6.71912 4.375,7.04112 L4.375,7.875 C3.199,8.53125 1.44638,9.48588 0.875,10.0354 C0.1645,10.7188 0,11.8125 0,14 L14,14 C14,11.8125 13.8364,10.7188 13.125,10.0354 Z"></path></svg></span>Created By</th><td><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">S</span></span>Sattiyan Selvarajah</span></td></tr><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M13.125,10.0354 C12.5536,9.48588 10.801,8.53125 9.625,7.875 L9.625,7.04112 C9.849,6.71912 10.045,6.37 10.1911,5.98588 C10.5849,5.7435 10.9375,5.28412 10.9375,4.8125 C10.9375,4.35488 10.9323,3.94275 10.4668,3.605 C10.3049,1.5575 9.436,0 7,0 C4.564,0 3.69513,1.5575 3.53325,3.605 C3.06775,3.94275 3.0625,4.35488 3.0625,4.8125 C3.0625,5.28412 3.41513,5.7435 3.80888,5.98588 C3.955,6.37 4.151,6.71912 4.375,7.04112 L4.375,7.875 C3.199,8.53125 1.44638,9.48588 0.875,10.0354 C0.1645,10.7188 0,11.8125 0,14 L14,14 C14,11.8125 13.8364,10.7188 13.125,10.0354 Z"></path></svg></span>Last Edited By</th><td><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">S</span></span>Sattiyan Selvarajah</span></td></tr><tr class="property-row property-row-last_edited_time"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M6.98643729,14.0000972 C5.19579566,14.0000972 3.40419152,13.3106896 2.04245843,11.9323606 C-0.681017475,9.21200555 -0.680780251,4.76029539 2.04293482,2.04012507 C4.76664406,-0.68004331 9.22427509,-0.68004331 11.9480135,2.04013479 C13.272481,3.36277455 14,5.1330091 14,6.99552762 C14,8.87640182 13.2721894,10.6285043 11.9480135,11.9509302 C10.5679344,13.3105924 8.77756503,14.0000972 6.98643729,14.0000972 Z M10.2705296,7.00913883 L10.2705296,8.46099754 L10.2705296,8.65543362 L10.076181,8.65543362 L8.6543739,8.65543362 L5.72059514,8.65543362 L5.52619796,8.65543362 L5.52619796,8.46099754 L5.52619796,5.52541044 L5.52619796,3.37946773 L5.52619796,3.18502193 L5.72059514,3.18502193 L7.17253164,3.18502193 L7.36692883,3.18502193 L7.36692883,3.37946773 L7.36692883,6.81467358 L10.076181,6.81467358 L10.2705296,6.81467358 L10.2705296,7.00913883 Z M12.1601539,6.99552762 C12.1601539,5.61697497 11.6190112,4.32597154 10.6393933,3.34769528 C8.63253764,1.34336744 5.35197452,1.34061603 3.34153136,3.33944106 C3.33868273,3.34219247 3.33607716,3.34494388 3.33322852,3.34769528 C1.32397148,5.35459953 1.32372842,8.63641682 3.33322852,10.6433794 C5.34295224,12.6504489 8.62968901,12.6504489 10.6393933,10.6433794 C11.6190112,9.66506426 12.1601539,8.37408027 12.1601539,6.99552762 Z"></path></svg></span>Last Edited Time</th><td><time>@July 19, 2021 12:54 PM</time></td></tr><tr class="property-row property-row-person"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesPerson"><path d="M9.625,10.8465 C8.91187,10.2891 8.12088,9.926 7,9.26013 L7,8.71938 C7.21175,8.47612 7.392,8.176 7.53813,7.83213 C7.94587,7.7315 8.3125,7.33425 8.3125,7 C8.3125,6.51788 8.1095,6.32713 7.8715,6.17137 C7.8715,6.15562 7.875,6.14162 7.875,6.125 C7.875,5.41362 7.4375,3.5 5.25,3.5 C3.0625,3.5 2.625,5.4145 2.625,6.125 C2.625,6.14162 2.6285,6.15562 2.6285,6.17137 C2.3905,6.32713 2.1875,6.51788 2.1875,7 C2.1875,7.33425 2.55413,7.7315 2.96187,7.833 C3.108,8.176 3.28825,8.47612 3.5,8.71938 L3.5,9.26013 C2.37912,9.92513 1.58812,10.2882 0.875,10.8465 C0.041125,11.4984 0,12.4688 0,14 L10.5,14 C10.5,12.4688 10.4589,11.4984 9.625,10.8465 Z M13.125,7.3465 C12.4119,6.78912 11.6209,6.426 10.5,5.76013 L10.5,5.21938 C10.7118,4.97613 10.892,4.676 11.0381,4.33213 C11.4459,4.2315 11.8125,3.83425 11.8125,3.5 C11.8125,3.01787 11.6095,2.82713 11.3715,2.67138 C11.3715,2.65562 11.375,2.64162 11.375,2.625 C11.375,1.91363 10.9375,0 8.75,0 C6.5625,0 6.125,1.9145 6.125,2.625 C6.125,2.64162 6.1285,2.65562 6.1285,2.67138 C6.11188,2.68275 6.09787,2.69588 6.08125,2.70725 C7.83212,3.066 8.59688,4.54825 8.72813,5.74787 C8.97575,6.00863 9.1875,6.39625 9.1875,7 C9.1875,7.60288 8.771,8.20312 8.18388,8.51462 C8.127,8.624 8.06662,8.729 8.00275,8.82962 C8.155,8.91537 8.30025,8.99675 8.44025,9.07463 C9.08075,9.4325 9.63375,9.74137 10.164,10.1561 C10.3022,10.2638 10.4204,10.3801 10.5289,10.4991 L14,10.4991 C14,8.96875 13.9589,7.99837 13.125,7.3465 Z"></path></svg></span>Stakeholders</th><td><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">S</span></span>Sattiyan Selvarajah</span></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Status</th><td><span class="selected-value select-value-color-brown">Handover</span></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Type</th><td><span class="selected-value select-value-color-brown">Technical Guidelines</span></td></tr></tbody></table></header><div class="page-body"><ol id="4dc326c4-ced0-4fe5-9b8f-e3112337e6c1" class="numbered-list" start="1"><li><strong>SELFIE WORLD</strong><p id="2cff9626-e913-40ad-85d8-50151d1aeb94" class=""><em><strong>Selfie World(TV)</strong></em></p></li></ol><ul id="8a699300-501d-470c-90fe-e23c00ead2f8" class="bulleted-list"><li>TV (No signal)<ul id="122311fd-cfb4-400b-b163-ccc95e06ece4" class="bulleted-list"><li>Check the HDMI <strong>connection </strong>in the <strong>PC </strong>and also <strong>TVs</strong></li></ul><ul id="42b5b133-5019-4f42-93ff-9315ce975aa7" class="bulleted-list"><li>Check the <strong>INPUT SOURCE</strong> in the TV - make sure the HDMI no in Input Source matches cable connection behind the TV. For example, in TV, the HDMI cable is <strong>connected </strong>to the <strong>HDMI-3</strong> port, means the <strong>INPUT SOURCE</strong> also must be <strong>HDMI-3</strong></li></ul></li></ul><ul id="3fcc7881-8865-4c81-96e8-c9f3f74923c2" class="bulleted-list"><li>App not full screen<ul id="112c913b-9ea3-4407-9752-878401c552ad" class="bulleted-list"><li>Close the app by pressing <strong>ALT + F4</strong></li></ul><ul id="ca99a13e-20e7-44be-88de-244b418827cc" class="bulleted-list"><li>Open the <strong>ResolutionFix.bat</strong> in the Desktop</li></ul><ul id="97d367ef-7f15-414c-8e61-497cc956ad48" class="bulleted-list"><li>Now you can <strong>open back</strong> the application / Just <strong>restart </strong>the PC</li></ul></li></ul><ul id="842dddaa-4a6d-44d5-b103-5e41badb6c32" class="bulleted-list"><li>The character is not loaded<ul id="eba9d679-76af-4ff0-ab6d-41bfdd77f6b4" class="bulleted-list"><li><strong>Restart </strong>the PC</li></ul><ul id="1f861126-5475-40fa-a506-fc36ca72a6a5" class="bulleted-list"><li>Or open this link from <strong>browser </strong>: <a href="http://localhost/Clear.php">http://localhost/Clear.php</a></li></ul><ul id="cec1fb91-a67b-43b6-92af-36ac43d661c0" class="bulleted-list"><li>If it’s still the same, please contact <strong>Crave Tech Support</strong></li></ul></li></ul><ul id="3085c59f-6737-4594-8f41-be8259c4bd9c" class="bulleted-list"><li>Application crash<ul id="2e730d49-cd43-41b3-b4c1-039c6c0a69aa" class="bulleted-list"><li><strong>Restart </strong>PC</li></ul><p id="573f4039-a3a1-4aae-8775-376fbc727a27" class=""><em><strong>Selfie Profiling (Touch Screen)</strong></em></p></li></ul><ul id="d058dff9-90ae-4c0f-b8ba-5018b6bc672d" class="bulleted-list"><li>Touch doesn&#x27;t work<ul id="e42c279a-7e88-4557-936d-c5919f910752" class="bulleted-list"><li>Check the cable <strong>connection </strong>in between the Acer <strong>monitor </strong>and the <strong>PC</strong>.</li></ul></li></ul><ul id="fb16ef42-3b4a-4fc1-93b4-bbdeb1950f74" class="bulleted-list"><li>App is not loaded/opened<ul id="de1d2eb3-0ed1-4eab-9764-668c5fdd9a05" class="bulleted-list"><li>Open the <strong>SelfieProfiling </strong>shortcut from Desktop / Just <strong>restart </strong>the PC</li></ul></li></ul><ul id="71736c36-f500-40bc-90c0-d0dd5d341d55" class="bulleted-list"><li>No Webcam Error<ul id="92db3b68-2cda-4238-9d40-f708975dc613" class="bulleted-list"><li>Check the <strong>webcam </strong>connection to the PC</li></ul></li></ul><ul id="c8d033da-0c3b-42f9-a72b-392c47bb5251" class="bulleted-list"><li>Server not connected Error<ul id="0fc16b51-4871-42e7-86de-7de85dbdb256" class="bulleted-list"><li>Check the <strong>LAN </strong>cable connection (PC, Router)</li></ul></li></ul><ul id="75ff627a-1c89-44af-922b-22b4a07858bc" class="bulleted-list"><li>Application crash<ul id="85be69ef-97ae-45a7-afff-d5358079625e" class="bulleted-list"><li><strong>Restart </strong>PC</li></ul></li></ul><p id="4537f7c3-b1d3-4ffc-b495-2f795dd619b3" class="block-color-red">
+</p><ol id="a30549f3-9e45-4930-abf3-29354104832e" class="numbered-list" start="1"><li><strong>VIRTUAL MIRROR / MAGIC MIRROR</strong></li></ol><ul id="2b6f8b91-d3f6-4a66-bcd3-af2d9d655fd3" class="bulleted-list"><li>TV (No signal)<ul id="dd398180-00c7-4764-bf34-00d1649e36b0" class="bulleted-list"><li>Check the HDMI <strong>connection </strong>in the <strong>PC </strong>and also <strong>TV</strong></li></ul><ul id="1092b338-0e7f-4df8-80a3-6345774accda" class="bulleted-list"><li>Check the <strong>INPUT SOURCE</strong> in the <strong>TV </strong>make sure the HDMI no in Input Source matches cable connection behind the TV. For example, in TV, the HDMI cable is <strong>connected </strong>to the <strong>HDMI-3</strong> port, means the <strong>INPUT SOURCE</strong> also must be <strong>HDMI-3</strong></li></ul></li></ul><ul id="9de68e2f-5b6b-4ac0-8185-461047d03c3a" class="bulleted-list"><li>App not full screen<ul id="4035f79d-af7c-484f-8eb3-00afce6394fb" class="bulleted-list"><li>Close the app by pressing <strong>ALT + F4</strong></li></ul><ul id="9559ce85-5531-4932-b89e-1b2cbcfe6a31" class="bulleted-list"><li>Open the <strong>ResolutionFix.bat</strong> in the Desktop</li></ul><ul id="038bf01b-2094-43cb-904b-f1eedc657a30" class="bulleted-list"><li>Now you can <strong>open back</strong> the application / Just <strong>restart </strong>the PC</li></ul></li></ul><ul id="1f0a7abf-6720-4fbd-b4eb-ba5c09ef442b" class="bulleted-list"><li>No light on Kinect sensor<ul id="62807003-c1c9-4e21-a48c-f78d41295bb1" class="bulleted-list"><li>Check the <strong>connection </strong>of the <strong>Kinect </strong>(Power, USB and adapter)</li></ul><ul id="3a73fe0b-50cc-44da-a794-4d472e0687c5" class="bulleted-list"><li><strong>Restart </strong>the PC</li></ul></li></ul><ul id="5c424669-966a-49f2-949d-690effef3591" class="bulleted-list"><li>No light on button / Button not working<ul id="7fbce6dd-572b-4a8b-bb66-b5770c67bb93" class="bulleted-list"><li><strong>Unplug </strong>the button USB and plug it to <strong>different USB </strong>port</li></ul><ul id="f2805573-e0e5-4f0b-aeb0-af6a71cf4de4" class="bulleted-list"><li>If still doesn’t work, <strong>replace the button itself</strong></li></ul></li></ul><ul id="9c2e7066-abfb-47c1-98da-07dee899848d" class="bulleted-list"><li>Application crash<ul id="1b48acb6-db01-43bd-bdfc-0d92d8be04ad" class="bulleted-list"><li><strong>Restart </strong>PC</li></ul></li></ul><p id="516965c7-7df1-4b9c-ac1b-f9064d0bd4d3" class="">
+</p><ol id="082e548f-8569-43bc-a893-679dacf91383" class="numbered-list" start="1"><li><strong>BECA RIDE / TIME TRAVEL BECA</strong></li></ol><ul id="2e6879ed-d96e-4d0f-960c-0ba166f7eaaf" class="bulleted-list"><li>Projector (No signal)<ul id="3cc49ae4-3b51-43f2-ad09-579f8d1a3862" class="bulleted-list"><li>Check the HDMI <strong>connection </strong>in the <strong>PC </strong>and also <strong>Projector</strong></li></ul><ul id="1f6021f8-20fd-4192-b43c-989f8799ec70" class="bulleted-list"><li>Check the<strong> INPUT SOURCE </strong>in the <strong>Projector </strong>make sure the HDMI no in Input Source matches cable connection on the projector. For example, in Projector, the HDMI cable is <strong>connected </strong>to the <strong>HDMI-1</strong> port, means the <strong>INPUT SOURCE</strong> also must be <strong>HDMI-1 (Use EPSON WHITE remote)</strong></li></ul></li></ul><ul id="d5a140ac-98eb-4e7c-acbf-96c26fb168dc" class="bulleted-list"><li>App not full screen<ul id="c738bd18-9ab5-45fe-8819-a99e3cdbce65" class="bulleted-list"><li>Close the app by pressing <strong>ALT + F4</strong></li></ul><ul id="0caa6ec4-e88c-416e-ba2e-88d213c96bd0" class="bulleted-list"><li>Open the <strong>ResolutionFix.bat</strong> in the Desktop</li></ul><ul id="d1fb9f61-ac88-4667-90fa-ae8bcdf38a98" class="bulleted-list"><li>Now you can <strong>open back</strong> the application / Just <strong>restart </strong>the PC</li></ul></li></ul><ul id="e7ccd1b1-b1ac-4c8b-9716-5755cf7c73e9" class="bulleted-list"><li>No light on leap motion sensor<ul id="47c5df58-fdae-4a17-b02c-c072931be18e" class="bulleted-list"><li>Unplug and replug the<strong> leap motion </strong>to different <strong>USB </strong>port</li></ul><ul id="a35738a1-4cb4-49ee-a874-32da84391009" class="bulleted-list"><li>If still same, contact <strong>Crave Tech Support</strong> to reinstall the driver</li></ul></li></ul><ul id="d3175aa0-67d7-4ca9-92f0-e1f5e82ffd09" class="bulleted-list"><li>The cycling doesn’t make the app run to work?<ul id="df66b201-7e12-40cf-a634-9aa879020eec" class="bulleted-list"><li>Check the <strong>connection </strong>of the Arduino <strong>sensor</strong>. (USB, other cables)</li></ul><ul id="a05da454-4060-45e5-a307-4bece4d9cfc0" class="bulleted-list"><li>If still doesn’t work / Arduino is spoiled, contact <strong>Crave Tech Support</strong></li></ul></li></ul><ul id="68899436-29e1-4358-b22c-ece3e764d290" class="bulleted-list"><li>Application crash<ul id="33994125-bb1d-4c81-b796-9ec8e8175cb4" class="bulleted-list"><li><strong>Restart </strong>PC</li></ul></li></ul><p id="9f4a5f02-b51d-4cad-8631-cab9f1e14425" class="">
+</p><ol id="b4e8c2a6-0668-47bc-a135-86be197cd3a2" class="numbered-list" start="1"><li><strong>MAGIC ACADEMY (HARRY POTTER)</strong></li></ol><ul id="b6db53df-130d-4cbf-839c-f9e5d3994a5b" class="bulleted-list"><li>TV(No signal)</li></ul><ul id="af14c3f3-6126-4eb9-9948-52b5e9df55e8" class="bulleted-list"><li>Check the HDMI <strong>connection </strong>in the <strong>PC </strong>and also <strong>TV</strong></li></ul><ul id="ff6d328c-6bd1-4cf2-99d8-ae9214ebea0d" class="bulleted-list"><li>Check the<strong> INPUT SOURCE</strong> in the <strong>TV- </strong>make sure the HDMI no in Input Source matches cable connection on the TV. For example, in TV, the HDMI cable is <strong>connected </strong>to the <strong>HDMI-1</strong> port, means the <strong>INPUT SOURCE</strong> also must be <strong>HDMI-1</strong></li></ul><ul id="ec3e3558-5b72-49eb-8451-6578e05fc1c3" class="bulleted-list"><li>App not full screen</li></ul><ul id="c0ef6f15-4b80-4982-be89-a43cf4ec25e5" class="bulleted-list"><li>Close the app by pressing <strong>ALT + F4</strong></li></ul><ul id="dd8cf4c3-231b-4554-b008-846f23c82641" class="bulleted-list"><li>Open the <strong>ResolutionFix.bat</strong> in the Desktop</li></ul><ul id="53ed962f-48ec-43de-8ec7-c6dca59bf592" class="bulleted-list"><li>Now you can <strong>open back</strong> the application / Just <strong>restart </strong>the PC</li></ul><ul id="3f20de56-1959-4ac1-b19a-be7d645baebf" class="bulleted-list"><li>No light on leap motion sensor</li></ul><ul id="a68dd021-6efd-4ec5-8a11-8f9c3161e831" class="bulleted-list"><li>Unplug and replug the <strong>leap motion</strong> to different <strong>USB </strong>port</li></ul><ul id="ab9734f0-892e-42b4-9879-ef9cfb587053" class="bulleted-list"><li>If still same, contact <strong>Crave Tech Support</strong> to reinstall the driver</li></ul><ul id="bab8777c-6b49-4c0a-9305-e4fc19ffaa7f" class="bulleted-list"><li>Application crash</li></ul><ul id="c741bb30-7dfd-475e-ac47-bb9ade1406d3" class="bulleted-list"><li>Restart PC</li></ul><p id="d8fd7f78-59ca-4b42-8a15-8ea91f53a32c" class="">
+</p><ol id="7e045fd4-cf7a-4066-ba99-7c6a3a174855" class="numbered-list" start="1"><li><strong>THE MAGIC STORYBOOK (SANG KANCIL)</strong></li></ol><ul id="a2057331-695f-41d3-b52b-454272d5c6d0" class="bulleted-list"><li>TV(No signal)</li></ul><ul id="27b5af27-e43c-4296-b2c7-423f4c383893" class="bulleted-list"><li>Check the HDMI <strong>connection </strong>in the <strong>PC </strong>and also <strong>TV</strong></li></ul><ul id="251f52b6-bb69-4be6-ba54-60259a3e7ffc" class="bulleted-list"><li>Check the <strong>INPUT SOURCE</strong> in the <strong>TV- </strong>make sure the HDMI no in Input Source matches cable connection on the TV. For example, in TV, the HDMI cable is <strong>connected </strong>to the <strong>HDMI-1</strong> port, means the <strong>INPUT SOURCE</strong> also must be <strong>HDMI-1</strong></li></ul><ul id="3787345a-c8b2-495c-a2d2-1bd656bd457c" class="bulleted-list"><li>App not full screen</li></ul><ul id="213642a1-f206-4125-ae6d-2ee4c08a1d03" class="bulleted-list"><li>Close the app by pressing <strong>ALT + F4</strong></li></ul><ul id="49bc1b83-8011-4cbe-9cd1-d8e3343d5aae" class="bulleted-list"><li>Open the <strong>ResolutionFix.bat</strong> in the Desktop</li></ul><ul id="e1e8805f-fc48-4d62-807b-b3382578b659" class="bulleted-list"><li>Now you can <strong>open back</strong> the application / Just <strong>restart </strong>the PC</li></ul><ul id="318f7bc4-98ce-4ef1-bbfc-de76c6b46818" class="bulleted-list"><li>No light on leap motion sensor</li></ul><ul id="d3274b5d-1f86-4577-90e7-efd1392f38a2" class="bulleted-list"><li>Unplug and replug the<strong> leap motion</strong> to different <strong>USB </strong>port</li></ul><ul id="a03e1862-1fa8-49f5-800b-af43e6badc89" class="bulleted-list"><li>If still same, contact <strong>Crave Tech Support</strong> to reinstall the driver</li></ul><ul id="86b09c90-ba39-46bb-bcaf-7b046867ccae" class="bulleted-list"><li>Application crash</li></ul><ul id="477f459a-190f-440a-b221-7bafce052703" class="bulleted-list"><li><strong>Restart </strong>PC</li></ul><p id="3d4ea019-471a-45e9-927c-1eb49512e181" class="">
+</p><ol id="5ab30e62-e938-4009-93f0-1be2f206a11c" class="numbered-list" start="1"><li><strong>BALLZONE (LUMO PLAY)</strong></li></ol><ul id="cabbbe68-da18-4adc-a269-bba305a57edc" class="bulleted-list"><li>Projector(No signal)</li></ul><ul id="484eade1-80cb-4aa3-9366-13860b3fe597" class="bulleted-list"><li>Check the HDMI <strong>connection </strong>in the <strong>PC </strong>and also <strong>Projector</strong></li></ul><ul id="a5574892-b28d-4d66-a8c1-4fc08328f5d1" class="bulleted-list"><li>Check the<strong> INPUT SOURCE</strong> in the <strong>Projector </strong>make sure the HDMI no in Input Source matches cable connection on the projector. For example, in Projector, the HDMI cable is <strong>connected </strong>to the <strong>HDMI-1</strong> port, means the <strong>INPUT SOURCE</strong> also must be <strong>HDMI-1 (Use SONY remote)</strong></li></ul><ul id="5e6b0e3c-bbb2-4f2f-83fd-1e54671c4c18" class="bulleted-list"><li>The detection does not work</li></ul><ul id="bd72d342-2f2a-4182-b797-5d09c338ab37" class="bulleted-list"><li>Check whether the sensor got <strong>Infra-red light</strong> or not</li></ul><ul id="c2c5f97d-1ef7-40e4-908a-2d559584f535" class="bulleted-list"><li>If don’t have, please contact <strong>Crave Tech Support </strong>for assistance</li></ul><ul id="45268319-48ad-4536-a9f8-7a210b5e59e8" class="bulleted-list"><li>Application crash</li></ul><ul id="18efce24-5b85-4214-bf1f-72aa673b2389" class="bulleted-list"><li><strong>Restart </strong>PC</li></ul><p id="8863755b-1a0a-484c-acd9-c7d1db0b3385" class="">
+</p><ol id="0aef9dae-7516-4d2d-9259-b6e614fd2dff" class="numbered-list" start="1"><li><strong>COLOR ALIVE</strong><p id="7d2ef3f6-aa7a-4cd3-b899-dbb70cf44fed" class=""><em><strong>Color Alive World (Projectors (Wall))</strong></em></p></li></ol><ul id="8e7f22b8-c3ff-42ee-9496-79ca37c6f4ca" class="bulleted-list"><li>Projector(No signal)</li></ul><ul id="ad35afd3-212b-447e-af5b-2fd323b3064c" class="bulleted-list"><li>Check the HDMI <strong>connection </strong>in the <strong>PC </strong>and also <strong>Projectors</strong></li></ul><ul id="c3284548-6ced-4abb-9633-1bec655a156b" class="bulleted-list"><li>Check the <strong>INPUT SOURCE</strong> in the <strong>Projector </strong>make sure the HDMI no in Input Source matches cable connection on the projector. For example, in Projector, the HDMI cable is <strong>connected </strong>to the <strong>HDMI-1</strong> port, means the <strong>INPUT SOURCE</strong> also must be <strong>HDMI-1 (Use Panasonic &amp; EPSON black remote)</strong></li></ul><ul id="2679c97c-a223-4b29-81b2-99383d0c81d1" class="bulleted-list"><li>App not full screen</li></ul><ul id="2b779099-b4dc-4f62-95b2-ddcbc2864508" class="bulleted-list"><li>Close the app by pressing <strong>ALT + F4</strong></li></ul><ul id="dd86f125-033d-431f-bfc6-b59f005a6ed8" class="bulleted-list"><li>Open the <strong>ResolutionFix.bat</strong> in the Desktop</li></ul><ul id="2bda0052-22a9-4483-9fb6-38f239776aad" class="bulleted-list"><li>Now you can <strong>open back</strong> the application / Just <strong>restart </strong>the PC</li></ul><ul id="ff5ed6e1-44c4-49fa-a718-940cd8cc26b9" class="bulleted-list"><li>App loads into Single screen / Surround is not enabled</li></ul><ul id="5e9b9d7e-0d79-4df2-9632-83efa731e81e" class="bulleted-list"><li>Right click on <strong>Desktop</strong>, and open <strong>NVIDIA Control Panel</strong></li></ul><figure id="7cf0200b-711e-4ec5-a514-505879bdefbd" class="image"><a href="https://lh6.googleusercontent.com/3ocslHoIaSSb_h6WILlcLi-279h3p0_wBGS5lhAR4AJOVKSHCrbu9EcSyWtmaHu8jOp4ku0jB9oOxSQ52vFPRI3e_uDJzYVWRqAZG7K6qpF4OlEtdji3wItxmBlSU8Uz5L9cne21"><img src="https://lh6.googleusercontent.com/3ocslHoIaSSb_h6WILlcLi-279h3p0_wBGS5lhAR4AJOVKSHCrbu9EcSyWtmaHu8jOp4ku0jB9oOxSQ52vFPRI3e_uDJzYVWRqAZG7K6qpF4OlEtdji3wItxmBlSU8Uz5L9cne21"/></a></figure><ul id="ddee87c1-a9b0-456c-9560-3c16625c6191" class="bulleted-list"><li>Click on<strong> Configure Surround, PhysX</strong>, check the <strong>Span displays with Surround</strong> and then click <strong>Configure</strong></li></ul><figure id="8c863de1-a006-4e16-80b5-aba29488bc91" class="image"><a href="https://lh4.googleusercontent.com/hsI04e-azRO014Nc_jkA8M7hhIR0qBM8JZFZs1fG_MhnD9S3EIH6-CoNU-T2Kiwf5x9ZfBx05V1lWXZksDFWWK-yDQR7bCA7GqPS76uEOg-TTf4MzlydcQ8xbMD-nfsoAcPm4u8T"><img src="https://lh4.googleusercontent.com/hsI04e-azRO014Nc_jkA8M7hhIR0qBM8JZFZs1fG_MhnD9S3EIH6-CoNU-T2Kiwf5x9ZfBx05V1lWXZksDFWWK-yDQR7bCA7GqPS76uEOg-TTf4MzlydcQ8xbMD-nfsoAcPm4u8T"/></a></figure><ul id="06a32408-4ff3-4720-90fa-0fcd0ba7f208" class="bulleted-list"><li>Sort the displays<strong> according to the numbers</strong> shown. And then click<strong> Enable Surround</strong>.</li></ul><ul id="8b0a4f47-5029-4dd3-9c8b-fc2d9a59b988" class="bulleted-list"><li>Make sure<strong> all three projectors are selected</strong></li></ul><ul id="c18772b2-428b-493d-af08-d2a31c8207a1" class="bulleted-list"><li>Wau not loaded in the World</li></ul><ul id="ad8f5e3a-d646-428e-90a1-5f4a2064a5e6" class="bulleted-list"><li>Close the app by pressing <strong>ALT + F4</strong></li></ul><ul id="1d485fd5-dc11-4a85-8f9e-2c1aa8becf3c" class="bulleted-list"><li>Find the ColorAlive app shortcut in the <strong>Desktop</strong>, right click and choose <strong>Open File Location</strong>.</li></ul><ul id="42ff4de2-82b4-4f97-8ee3-c672a1d37560" class="bulleted-list"><li>Go into <strong>ColorAliveWorld_Data/StreamingAssets</strong></li></ul><ul id="4d093486-a1d0-443c-8453-693ebafd5ed3" class="bulleted-list"><li>Check the <strong>FilePath </strong>&gt; <strong>C:\xampp\htdocs\Images\ColorAlive\</strong></li></ul><ul id="f2afe16d-b87a-45a7-8901-00583ec208b9" class="bulleted-list"><li>Check the <strong>ServerAddress </strong>&gt; <strong>192.168.0.111</strong></li></ul><ul id="420b84e9-ee64-4016-924a-c578abfaf255" class="bulleted-list"><li>Application crash</li></ul><ul id="77ef7325-4b7c-4e5c-a598-9aaa49eba8f3" class="bulleted-list"><li><strong>Restart </strong>PC<p id="0e6596c5-9587-4b2d-a2ea-7dbd551bf1df" class=""><em><strong>Color Alive Scanner (Touch Screen (Box))</strong></em></p></li></ul><ul id="51b1ef63-6292-4e58-aadb-6fce8f5fe331" class="bulleted-list"><li>Touch doesn&#x27;t work</li></ul><ul id="3f5e6668-837c-4f3e-8250-a2e5849756f6" class="bulleted-list"><li>Check the cable <strong>connection </strong>in between the <strong>monitor </strong>and the <strong>PC</strong>.</li></ul><ul id="94814973-7b47-43d0-a848-c2aa6275285e" class="bulleted-list"><li>App is not loaded/opened</li></ul><ul id="241b0b43-8003-4123-b280-35d44fe7ff22" class="bulleted-list"><li>Open the <strong>ColorAliveScanner</strong> shortcut from Desktop / Just <strong>restart </strong>the PC</li></ul><ul id="d87eec16-0da6-4755-94d7-7f49b94b893d" class="bulleted-list"><li>Server not connected Error</li></ul><ul id="8b381601-3359-4696-94f8-6b3074a75e00" class="bulleted-list"><li>Check the <strong>LAN </strong>cable connection (PC, Router)</li></ul><ul id="25dc4c41-a8e2-466c-83b9-be29eb7ce571" class="bulleted-list"><li>Scanning doesn’t work for more than 5 times</li></ul><ul id="52cfe1bf-29d8-4bbb-868d-8610b8861241" class="bulleted-list"><li>Please contact <strong>Crave Tech Support </strong>for assistance</li></ul><ul id="ada33db1-80c2-49aa-b206-b5a2f96c73e7" class="bulleted-list"><li>Application crash</li></ul><ul id="076cdd6c-541a-4952-b877-9568f1c2d284" class="bulleted-list"><li><strong>Restart </strong>PC</li></ul><p id="f4fea605-c8fb-46e9-9c5b-8a8262075ee1" class="">
+</p><ol id="3a4a776a-0db5-4929-97ee-ec75c3c6df38" class="numbered-list" start="1"><li><strong>4D MAX (Requires user input from keyboard in order to work)</strong></li></ol><ul id="c6a080df-c218-4c31-b276-193836869d09" class="bulleted-list"><li>Projector(No signal)</li></ul><ul id="008e5105-6c7b-46d1-afff-c112677f7047" class="bulleted-list"><li>Check the HDMI <strong>connection </strong>in the <strong>PC </strong>and also <strong>Projectors</strong></li></ul><ul id="392a05a6-9463-4326-87c2-7053f9be6eee" class="bulleted-list"><li>Check the <strong>INPUT SOURCE</strong> in the <strong>Projector </strong>make sure the HDMI no in Input Source matches cable connection on the projector. For example, in Projector, the HDMI cable is <strong>connected </strong>to the <strong>HDMI-1</strong> port, means the <strong>INPUT SOURCE</strong> also must be <strong>HDMI-1 (Use Panasonic &amp; EPSON black remote)</strong></li></ul><ul id="320f5051-92b8-4b67-b224-980359c8cc6c" class="bulleted-list"><li>App not full screen</li></ul><ul id="dccb365c-a3f6-4094-9481-92fe49104c31" class="bulleted-list"><li>Close the app by pressing <strong>ALT + F4</strong></li></ul><ul id="784a6684-01bf-4b9d-b49f-d500f2bb251e" class="bulleted-list"><li>Open the <strong>ResolutionFix.bat</strong> in the Desktop</li></ul><ul id="eca6109c-7fb4-41be-bea8-fa24a765c27d" class="bulleted-list"><li>Now you can <strong>open back</strong> the application / Just <strong>restart </strong>the PC</li></ul><ul id="0bb88bf3-7263-4b50-abb5-e1d293c0fe82" class="bulleted-list"><li>App loads into Single screen / Surround is not enabled</li></ul><ul id="9afd63b6-7baa-4ed3-90ed-25c058a07645" class="bulleted-list"><li>Right click on <strong>Desktop</strong>, and open <strong>NVIDIA Control Panel</strong></li></ul><figure id="c79312e9-8c2b-4b1f-9652-9f2cc6df1862" class="image"><a href="https://lh6.googleusercontent.com/3ocslHoIaSSb_h6WILlcLi-279h3p0_wBGS5lhAR4AJOVKSHCrbu9EcSyWtmaHu8jOp4ku0jB9oOxSQ52vFPRI3e_uDJzYVWRqAZG7K6qpF4OlEtdji3wItxmBlSU8Uz5L9cne21"><img src="https://lh6.googleusercontent.com/3ocslHoIaSSb_h6WILlcLi-279h3p0_wBGS5lhAR4AJOVKSHCrbu9EcSyWtmaHu8jOp4ku0jB9oOxSQ52vFPRI3e_uDJzYVWRqAZG7K6qpF4OlEtdji3wItxmBlSU8Uz5L9cne21"/></a></figure><ul id="1388185c-75d8-4f86-8f50-6815593fce1b" class="bulleted-list"><li>Click on<strong> Configure Surround, PhysX</strong>, check the <strong>Span displays with Surround</strong> and then click <strong>Configure</strong></li></ul><figure id="9740af69-73da-49bb-b310-ed48769146a4" class="image"><a href="https://lh4.googleusercontent.com/hsI04e-azRO014Nc_jkA8M7hhIR0qBM8JZFZs1fG_MhnD9S3EIH6-CoNU-T2Kiwf5x9ZfBx05V1lWXZksDFWWK-yDQR7bCA7GqPS76uEOg-TTf4MzlydcQ8xbMD-nfsoAcPm4u8T"><img src="https://lh4.googleusercontent.com/hsI04e-azRO014Nc_jkA8M7hhIR0qBM8JZFZs1fG_MhnD9S3EIH6-CoNU-T2Kiwf5x9ZfBx05V1lWXZksDFWWK-yDQR7bCA7GqPS76uEOg-TTf4MzlydcQ8xbMD-nfsoAcPm4u8T"/></a></figure><ul id="8c9fdd07-570d-423c-b9f4-3aecbb78cad7" class="bulleted-list"><li>Sort the displays <strong>according to the numbers</strong> shown. And then click <strong>Enable Surround</strong>.</li></ul><ul id="1cc7ad5a-462f-4b12-8271-c0610f762723" class="bulleted-list"><li>Make sure <strong>all three projectors are selected</strong></li></ul><ul id="bcd9a4a0-f462-46b6-b45e-07530ce5dd72" class="bulleted-list"><li>Application crash</li></ul><ul id="7ed51b3b-0252-4ad3-ad5f-3f339498fbfa" class="bulleted-list"><li><strong>Restart </strong>PC</li></ul><p id="59ed432e-6eb9-4f35-a808-f6c0252108bf" class="">
+</p><ol id="db29e8a2-7a3d-44e5-910b-a5cb1e7cf567" class="numbered-list" start="1"><li><strong>AR BOX</strong></li></ol><ul id="4ecaac93-ee4e-4f7f-9dbf-dcf48004ad1b" class="bulleted-list"><li>TV(No signal)</li></ul><ul id="96228e3b-ca3b-4906-a377-09c2515c0900" class="bulleted-list"><li>Check the HDMI connection in the PC and also TV</li></ul><ul id="a695c680-467d-4bf4-9bbd-ded9176fcea2" class="bulleted-list"><li>Check the INPUT SOURCE in the TV- make sure the HDMI no in Input Source matches cable connection on the TV. For example, in TV, the HDMI cable is <strong>connected </strong>to the <strong>HDMI-1</strong> port, means the <strong>INPUT SOURCE</strong> also must be <strong>HDMI-1</strong></li></ul><ul id="6d2da1fb-5962-4eb2-8747-1477eee75c33" class="bulleted-list"><li>App not full screen</li></ul><ul id="0dd24ae7-76d0-4db9-8beb-8cad13399005" class="bulleted-list"><li>Close the app by pressing <strong>ALT + F4</strong></li></ul><ul id="2b558ee8-fe1f-4823-b862-4cbee300e2cf" class="bulleted-list"><li>Open the <strong>ResolutionFix.bat</strong> in the Desktop</li></ul><ul id="dfcfe495-b05a-442c-866d-029cbd9f7c99" class="bulleted-list"><li>Now you can <strong>open back</strong> the application / Just <strong>restart </strong>the PC</li></ul><ul id="47135e5c-f963-4f75-8a3e-0dd1e2f79634" class="bulleted-list"><li>Touch doesn’t work</li></ul><ul id="0ebb4eb5-ad5a-40e4-add9-c8ca5cd79ef1" class="bulleted-list"><li>Check the cable <strong>connection </strong>in between the <strong>monitor </strong>and the <strong>PC</strong>.</li></ul><ul id="35f4519c-35c7-4b75-8395-6f2482eced85" class="bulleted-list"><li>No camera view during the photo snapping</li></ul><ul id="c0e9cfa8-38ec-49aa-8221-4f22c0127f3a" class="bulleted-list"><li>Check the <strong>connection </strong>of <strong>webcam </strong>to the PC</li></ul><ul id="2b4ffe92-3e5c-4398-95fa-6cb7ec62a9b5" class="bulleted-list"><li>No QR code displayed (For customer to download the photo)</li></ul><ul id="56e1e2ee-d2a5-404a-bdb3-952ac9ed6537" class="bulleted-list"><li>Make sure <strong>Wifi Dongle is connected</strong> and Wifi is connected to <strong>WonderparkMelaka_plus</strong></li></ul><ul id="4e54916c-4b76-4d06-9e38-e03c4329639a" class="bulleted-list"><li>Application crash</li></ul><ul id="7c70030f-dc72-4a42-8598-9bc94e878380" class="bulleted-list"><li><strong>Restart </strong>PC</li></ul><p id="3cf63bff-acd9-4a6f-8483-a4ffb26bff5f" class="">
+</p><p id="b183c827-8ca3-4268-b172-97e8f39179b4" class="block-color-red"><span style="border-bottom:0.05em solid"><strong>FOR SOFTWARE UPDATE : CONNECT WIFI DONGLE &amp; TURN ON TEAMVIEWER</strong></span></p></div></article></body></html>
